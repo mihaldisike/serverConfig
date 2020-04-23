@@ -1,0 +1,31 @@
+
+#lower number = higher in the list
+#flag G to ignore gpg check (else you will need manual action)
+zypper -n addrepo -G -p 90 http://download.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.1/devel:languages:php.repo
+zypper -n refresh
+zypper -n install php7 php7-devel php7-fpm composer php7-mbstring php7-fileinfo php7-curl php7-mysql php7-soap php7-opcache
+zypper -n in nginx
+
+#used on several occasion and really handy!
+#pecl install apcu
+#echo "extension = apcu.so" > /etc/php7/conf.d/apcu.ini
+
+#not strictly needed 
+#pecl install redis
+#echo "extension = apcu.so" > /etc/php7/conf.d/apcu.ini
+#pecl install igbinary
+#echo "extension = apcu.so" > /etc/php7/conf.d/apcu.ini
+
+#of course install only in local machine!
+#pecl install xdebug
+#wget "https://seisho.us/serverConfig/xdebug.ini" -O ->> /etc/php7/conf.d/xdebug.ini
+
+#phpfpm tutto default
+cd /etc/php7/fpm
+cp php-fpm.conf.default php-fpm.conf
+cd php-fpm.d/
+cp www.conf.default www.conf
+
+wget "https://seisho.us/serverConfig/phpfpm.patch" -O -> /tmp/phpfpm.patch
+cd /etc/
+git apply /tmp/phpfpm.patch
