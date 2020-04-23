@@ -11,3 +11,8 @@ export HISTFILE=~/.bash_eternal_history
 # Force prompt to write history after every command.
 # http://superuser.com/questions/20900/bash-history-loss
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
+#force load the autocompletition info
+for file in /etc/bash_completion.d/*.sh ; do
+    source "$file"
+done
