@@ -3,7 +3,7 @@
 #flag G to ignore gpg check (else you will need manual action)
 zypper -n addrepo --gpgcheck -p 90 http://download.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.1/devel:languages:php.repo
 zypper -n --gpg-auto-import-keys refresh
-zypper -n install php7 php7-devel php7-fpm composer php7-mbstring php7-fileinfo php7-curl php7-mysql php7-soap php7-opcache php7-shmop
+zypper -n install php7 php7-devel php7-fpm composer php7-mbstring php7-fileinfo php7-curl php7-mysql php7-soap php7-opcache php7-shmop php7-tidy
 
 zypper -n in nginx
 #autostart
