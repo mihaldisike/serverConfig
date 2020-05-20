@@ -51,6 +51,7 @@ cd /etc/
 git commit -m"setup in progress"
 git add *
 
+#this also contain basic nginx
 wget "https://seisho.us/serverConfig/php74.sh" -O -> /tmp/php74.sh
 chmod +x /tmp/php74.sh
 /tmp/php74.sh

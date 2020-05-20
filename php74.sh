@@ -1,14 +1,19 @@
 
 #lower number = higher in the list
 #flag G to ignore gpg check (else you will need manual action)
-zypper -n addrepo -G -p 90 http://download.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.1/devel:languages:php.repo
-zypper -n refresh
+zypper -n addrepo --gpgcheck -p 90 http://download.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.1/devel:languages:php.repo
+zypper -n --gpg-auto-import-keys refresh
 zypper -n install php7 php7-devel php7-fpm composer php7-mbstring php7-fileinfo php7-curl php7-mysql php7-soap php7-opcache
 zypper -n in nginx
+#autostart
+chkconfig php-fpm on
+chkconfig nginx on
 
 #used on several occasion and really handy!
-#pecl install apcu
-#echo "extension = apcu.so" > /etc/php7/conf.d/apcu.ini
+#we just need to force say ok to it to go ahead...
+#not tested but is probably ok
+printf "\n" | pecl install apcu
+echo "extension = apcu.so" > /etc/php7/conf.d/apcu.ini
 
 #not strictly needed 
 #pecl install redis
@@ -29,3 +34,9 @@ cp www.conf.default www.conf
 wget "https://seisho.us/serverConfig/phpfpm.patch" -O -> /tmp/phpfpm.patch
 cd /etc/
 git apply /tmp/phpfpm.patch
+
+#just  a few defaults
+wget "https://seisho.us/serverConfig/nginx.sh" -O -> /tmp/nginx.sh
+chmod +x /tmp/nginx.sh
+/tmp/nginx.sh
+
