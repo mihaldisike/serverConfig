@@ -1,0 +1,36 @@
+zypper in lsycnd
+
+cat << 'EOF' > /etc/lsyncd/lsyncd.conf
+settings {
+   statusFile = "/var/log/lsyncd/lsyncd.status",
+   nodaemon   = false,
+   statusInterval = 5,
+   maxDelays = 10,
+   maxProcesses = 1,
+}
+
+sync{
+  default.rsyncssh,
+  ssh = {
+    port = 1022
+  },
+  host="ivano.mercuri@s16.nosler.icu",
+  excludeFrom="/srv/www/exclude-list.txt",
+  source="/srv/www",
+  targetdir="/srv/www",
+  delay = 10,
+  delete=true
+}
+
+sync{
+  default.rsyncssh,
+  ssh = {
+    port = 1022
+  },
+  host="ivano.mercuri@s16.nosler.icu",
+  source="/root/.acme.sh/",
+  targetdir="/srv/acme.sh/",
+  delay = 10,
+  delete=true
+}
+EOF

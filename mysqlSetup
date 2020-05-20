@@ -1,0 +1,49 @@
+#create the folder the binlog
+mkdir /srv/binlog -p
+chown mysql:mysql /srv/binlog
+
+[mariadb]
+#single most important thing
+innodb_buffer_pool_size = 10G
+
+#force off cache
+query_cache_size        = 0
+
+report-host=s16.nosler.icu
+log_bin = /srv/binlog/binlog
+max_binlog_size=512M
+binlog_cache_size=128M
+innodb_doublewrite = 1
+sync_binlog = 1 #do not sync binlog each time
+innodb_flush_method= O_DIRECT_NO_FSYNC
+
+
+max_allowed_packet      = 16M
+character-set-server=utf8
+collation-server=utf8_general_ci
+max_connections        = 1024
+innodb_file_per_table
+
+innodb_log_file_size = 256M
+innodb_log_buffer_size=256M
+innodb_flush_log_at_trx_commit = 2  #lot of disk IO reduction, at most we can loose 1 second of data
+
+#default transaction style is quite relaxed, safe for 99% of what we do
+transaction-isolation=READ-COMMITTED
+#force off galer
+wsrep_on = off
+
+
+ssl-ca=/srv/cert/s14/ca.pem
+ssl-cert=/srv/cert/s14/server-cert.pem
+ssl-key=/srv/cert/s14/server-key.pem
+
+log_error=/var/lib/mysql/mariadb.err
+
+#############################################################################################
+#check if is ok
+systemctl start mariadb
+
+#if you need to perform a slave attach read https://trott.pw/dev_wiki2/index.php?title=MySQL_Async_Replication
+#those step can be hardly scripted or automated...
+
