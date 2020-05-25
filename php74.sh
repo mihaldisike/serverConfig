@@ -10,7 +10,8 @@ zypper -n --gpg-auto-import-keys refresh
 zypper -n install php7 php7-devel php7-fpm composer php7-mbstring php7-fileinfo php7-curl php7-mysql php7-soap php7-opcache php7-shmop php7-tidy
 
 zypper -n in nginx
-#in some case this is quite usefull 
+#in some case this is quite usefull to enable the (just at the beginning)
+# load_module lib64/nginx/modules/ngx_http_fancyindex_module.so;
 
 #autostart
 chkconfig php-fpm on
