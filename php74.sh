@@ -49,5 +49,5 @@ chmod +x /tmp/nginx.sh
 /tmp/nginx.sh
 
 #srly ? how do they think is going to work whitout that ?
-echo "\nfastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;" >> /etc/nginx/fastcgi_params
+printf '\nfastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;' >> /etc/nginx/fastcgi_params
 
