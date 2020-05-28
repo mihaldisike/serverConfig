@@ -5,3 +5,6 @@ zypper in -f MariaDB-server-10.4.11-1
 zypper in MariaDB-backup
 systemctl start mariadb
 chkconfig mariadb on
+
+#in case you are doing an update also execute
+# mysql_upgrade 
