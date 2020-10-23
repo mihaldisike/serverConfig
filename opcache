@@ -1,0 +1,8 @@
+
+#some tweak for having opcache ON, 
+opcache.enable=1
+opcache.enable_cli=1
+opcache.file_cache="/tmp/php-file-cache"
+opcache.file_cache_only=1
+opcache.file_cache_consistency_checks=1
+
