@@ -7,7 +7,8 @@ zypper -n addrepo --gpgcheck -p 90 http://download.opensuse.org/repositories/dev
 #zypper -n addrepo --gpgcheck -p 90 https://download.opensuse.org/repositories/server:http/openSUSE_Leap_15.1/server:http.repo
 
 zypper -n --gpg-auto-import-keys refresh
-zypper -n install php7 php7-devel php7-fpm composer php7-mbstring php7-fileinfo php7-curl php7-mysql php7-soap php7-opcache php7-shmop php7-tidy
+zypper -n install php7 php7-devel php7-fpm composer php7-mbstring php7-fileinfo php7-curl php7-mysql php7-soap php7-
+he php7-shmop php7-tidy
 
 zypper -n in nginx
 #in some case this is quite usefull to enable the (just at the beginning)
@@ -22,6 +23,16 @@ chkconfig nginx on
 #not tested but is probably ok
 printf "\n" | pecl install apcu
 echo "extension = apcu.so" > /etc/php7/conf.d/apcu.ini
+
+#opcache is NOT ON for cli, a few things are needed to enable see for detail https://stackoverflow.com/a/35880017
+#https://pierre-schmitz.com/using-opcache-to-speed-up-your-cli-scripts/
+wget https://raw.githubusercontent.com/dublinbranch/serverConfig/master/opcache -O -> /tmp/opcache
+cat /tmp/opcache >> /etc/php7/cli/php.ini
+mkdir /tmp/php-file-cache
+#create the script to create the folder, and clean old stuff
+mkdir /etc/custom
+echo "d /tmp/php-opcache 1777 root root 1d" >> /etc/custom/opcache.conf
+systemd-tmpfiles --create /etc/custom/opcache.conf
 
 #not strictly needed 
 #pecl install redis
