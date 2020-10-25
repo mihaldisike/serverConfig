@@ -50,15 +50,20 @@ cp php-fpm.conf.default php-fpm.conf
 cd php-fpm.d/
 cp www.conf.default www.conf
 
-wget "https://seisho.us/serverConfig/phpfpm.patch" -O -> /tmp/phpfpm.patch
+wget "https://raw.githubusercontent.com/dublinbranch/serverConfig/master/phpfpm.patch" -O -> /tmp/phpfpm.patch
 cd /etc/
 git apply /tmp/phpfpm.patch
 
 #just  a few defaults
-wget "https://seisho.us/serverConfig/nginx.sh" -O -> /tmp/nginx.sh
+wget "https://raw.githubusercontent.com/dublinbranch/serverConfig/master/nginx.sh" -O -> /tmp/nginx.sh
 chmod +x /tmp/nginx.sh
 /tmp/nginx.sh
 
 #srly ? how do they think is going to work whitout that ?
 printf '\nfastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;' >> /etc/nginx/fastcgi_params
 
+nginx -t
+rcnginx start
+
+git add *
+git commit -am"php done"
