@@ -13,6 +13,12 @@ zypper in jemalloc
 echo 'Environment="LD_PRELOAD=/usr/lib64/libjemalloc.so.2"' >> /usr/lib/systemd/system/mariadb.service
 systemctl daemon-reload
 
+#those are just a few common thing
+echo "plugin-load-add=ha_rocksdb.so" >> /etc/my.cnf.d/server.cnf
+echo "rocksdb_flush_log_at_trx_commit = 2" >> /etc/my.cnf.d/server.cnf
+#each server is different, take example from the various config file in gogs
+
+
 systemctl start mariadb
 chkconfig mariadb on
 
