@@ -32,6 +32,7 @@ mkdir /tmp/php-file-cache
 mkdir /etc/custom
 echo "d /tmp/php-opcache 1777 root root 1d" >> /etc/custom/opcache.conf
 systemd-tmpfiles --create /etc/custom/opcache.conf
+systemctl daemon-reload
 
 #not strictly needed 
 #pecl install redis
