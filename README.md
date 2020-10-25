@@ -35,10 +35,11 @@ wget "https://seisho.us/serverConfig/installme.sh" -O -> /tmp/installme.sh
 chmod +x /tmp/installme.sh
 /tmp/installme.sh
 
-#mariadb 10.4
-wget "https://seisho.us/serverConfig/mariadb14.sh" -O -> /tmp/mariadb14.sh
-chmod +x /tmp/mariadb14.sh
-/tmp/mariadb14.sh
+#mariadb 10.4 / 10.5 
+wget "https://seisho.us/serverConfig/mariadb14.sh" -O -> /tmp/mariadb.sh
+wget "https://raw.githubusercontent.com/dublinbranch/serverConfig/master/mariadb15.sh" -O -> /tmp/mariadb.sh
+chmod +x /tmp/mariadb.sh
+/tmp/mariadb.sh
 #now create the first user if needed
 
 #ephemeral port exaustion (TCP Port Lingering)
