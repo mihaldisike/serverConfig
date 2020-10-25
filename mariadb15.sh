@@ -11,6 +11,12 @@ zypper -n in MariaDB-backup
 #sopratutto se usi rocksdb...
 zypper in jemalloc
 echo 'Environment="LD_PRELOAD=/usr/lib64/libjemalloc.so.2"' >> /usr/lib/systemd/system/mariadb.service
+
+#also change in case of warning / failure to start
+vi /usr/lib/systemd/system/mariadb.service
+> ProtectHome=false
+> LimitNOFILE=50000
+
 systemctl daemon-reload
 
 #those are just a few common thing
