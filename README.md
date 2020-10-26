@@ -2,7 +2,7 @@
 some common things to prime a new suse server, you can upload wherever, even in the same machine
 
 #bashrc
-wget "https://seisho.us/serverConfig/bashrc" -O -> ~/.bashrc
+wget "https://raw.githubusercontent.com/dublinbranch/serverConfig/master/bashrc" -O -> ~/.bashrc
 
 #set proper git usage and first repo
 zypper in git
@@ -24,14 +24,14 @@ firewall-cmd --zone=public --permanent --add-service=https
 firewall-cmd --reload
 
 #sshd
-wget "https://seisho.us/serverConfig/sshd.patch" -O -> /tmp/sshd.patch
+wget "https://raw.githubusercontent.com/dublinbranch/serverConfig/master/sshd.patch" -O -> /tmp/sshd.patch
 cd /etc 
 git apply /tmp/sshd.patch
 rcsshd restart 
 and reconnect using port 1022
 
 #common tooling
-wget "https://seisho.us/serverConfig/installme.sh" -O -> /tmp/installme.sh
+wget "https://raw.githubusercontent.com/dublinbranch/serverConfig/master/installme.sh" -O -> /tmp/installme.sh
 chmod +x /tmp/installme.sh
 /tmp/installme.sh
 
