@@ -55,6 +55,17 @@ http {
     keepalive_timeout  65;
 
     gzip  on;
+    gzip_types
+        text/plain
+        text/css
+        text/js
+        text/xml
+        text/javascript
+        application/javascript
+        application/json
+        application/xml
+        application/rss+xml
+        image/svg+xml;
 
     include conf.d/*.conf;
     server {
