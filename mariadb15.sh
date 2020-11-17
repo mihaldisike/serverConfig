@@ -5,7 +5,7 @@ zypper -n --gpg-auto-import-keys refresh
 zypper rm mariadb mariadb-client
 #in case version changes ecc ecc just zypper search -s mariadb to get the latest
 zypper in MariaDB-server-10.5.6-1 MariaDB-rocksdb-engine MariaDB-oqgraph-engine MariaDB-columnstore-engine
-zypper -n in MariaDB-backup
+zypper -n in MariaDB-backup mariadb-tools
 
 #per motivi MISTICI non è presente come default di usare jemalloc, e questo ha causato problemi 
 #sopratutto se usi rocksdb...
