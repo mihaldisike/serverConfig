@@ -9,7 +9,7 @@ zypper -n in MariaDB-backup mariadb-tools
 
 #per motivi MISTICI non è presente come default di usare jemalloc, e questo ha causato problemi 
 #sopratutto se usi rocksdb...
-zypper in jemalloc
+zypper -n in jemalloc
 echo 'Environment="LD_PRELOAD=/usr/lib64/libjemalloc.so.2"' >> /usr/lib/systemd/system/mariadb.service
 
 #also change in case of warning / failure to start
