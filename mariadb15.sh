@@ -7,6 +7,10 @@ zypper rm mariadb mariadb-client
 zypper in MariaDB-server-10.5.6-1 MariaDB-rocksdb-engine MariaDB-oqgraph-engine MariaDB-columnstore-engine
 zypper -n in MariaDB-backup mariadb-tools
 
+#bing and where to find
+mkdir /srv/binlog/binlog -p
+chown mysql /srv/binlog
+
 #per motivi MISTICI non è presente come default di usare jemalloc, e questo ha causato problemi 
 #sopratutto se usi rocksdb...
 zypper -n in jemalloc
@@ -22,6 +26,7 @@ systemctl daemon-reload
 #those are just a few common thing
 echo "plugin-load-add=ha_rocksdb.so" >> /etc/my.cnf.d/server.cnf
 echo "rocksdb_flush_log_at_trx_commit = 2" >> /etc/my.cnf.d/server.cnf
+echo "event_scheduler=ON"  >> /etc/my.cnf.d/server.cnf
 #each server is different, take example from the various config file in gogs
 
 
