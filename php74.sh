@@ -1,13 +1,13 @@
 
 #lower number = higher in the list
 #flag G to ignore gpg check (else you will need manual action)
-zypper -n addrepo --gpgcheck -p 90 http://download.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.1/devel:languages:php.repo
+zypper -n addrepo --gpgcheck -p 90 http://download.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.2/devel:languages:php.repo
 
 #more recent version and other stuff
 #zypper -n addrepo --gpgcheck -p 90 https://download.opensuse.org/repositories/server:http/openSUSE_Leap_15.1/server:http.repo
 
 zypper -n --gpg-auto-import-keys refresh
-zypper -n install php7 php7-devel php7-fpm composer php7-opcache php7-mbstring php7-fileinfo php7-curl php7-mysql php7-soap php7-he php7-shmop php7-tidy
+zypper -n install php7 php7-devel php7-fpm composer php7-opcache php7-mbstring php7-fileinfo php7-curl php7-mysql php7-soap php7-shmop php7-tidy
 
 zypper -n in nginx
 #in some case this is quite usefull to enable the (just at the beginning)
@@ -50,7 +50,7 @@ cp php-fpm.conf.default php-fpm.conf
 cd php-fpm.d/
 cp www.conf.default www.conf
 
-wget "https://raw.githubusercontent.com/dublinbranch/serverConfig/master/phpfpm.patch" -O -> /tmp/phpfpm.patch
+wget "https://raw.githubusercontent.com/dublinbranch/serverConfig/master/phpfpm_15.2.patch" -O -> /tmp/phpfpm.patch
 cd /etc/
 git apply /tmp/phpfpm.patch
 
