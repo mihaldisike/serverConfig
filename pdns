@@ -1,0 +1,41 @@
+Is needed by nginx for doing proxying stuff, else will be slow / do far too many, ad we get blacklisted / rate limited
+
+Change in 
+```
+vi /usr/lib/systemd/system/pdns-recursor.service
+ 
+line 13
+
+Type=simple
+
+
+vi /etc/pdns/recursor.conf-dist
+
+#################################
+# distributor-threads   Launch this number of distributor threads, distributing queries to other threads
+#
+distributor-threads=12
+
+
+#################################
+# query-local-address6  Source IPv6 address for sending queries. IF UNSET, IPv6 WILL NOT BE USED FOR OUTGOING QUERIES
+#
+query-local-address6=::
+
+
+
+##
+## switch to chroot jail
+##
+#https://github.com/PowerDNS/pdns/issues/4179
+##PowerDNS team, can you advise on what to do?
+#Our policy is, don't chroot.
+#chroot=/var/lib/pdns
+
+
+
+vi /etc/pdns/recursor.conf
+
+Disable the chroot jaail
+
+```
