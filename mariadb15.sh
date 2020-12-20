@@ -25,6 +25,7 @@ vi /usr/lib/systemd/system/mariadb.service
 systemctl daemon-reload
 
 #those are just a few common thing
+echo "plugin-load-add=ha_connect" >> /etc/my.cnf.d/server.cnf
 echo "plugin-load-add=ha_rocksdb.so" >> /etc/my.cnf.d/server.cnf
 echo "rocksdb_flush_log_at_trx_commit = 2" >> /etc/my.cnf.d/server.cnf
 echo "event_scheduler=ON"  >> /etc/my.cnf.d/server.cnf
