@@ -4,7 +4,8 @@ zypper -n --gpg-auto-import-keys refresh
 #no silent install there is some output and the etc/my.cnf need to be changed
 zypper rm mariadb mariadb-client
 #in case version changes ecc ecc just zypper search -s mariadb to get the latest
-zypper in MariaDB-server-10.5.6-1 MariaDB-rocksdb-engine MariaDB-oqgraph-engine MariaDB-columnstore-engine
+zypper in MariaDB-server-10.5.6-1 MariaDB-rocksdb-engine MariaDB-oqgraph-engine MariaDB-columnstore-engine MariaDB-connect-engine
+
 zypper -n in MariaDB-backup mariadb-tools
 
 #bing and where to find
