@@ -2,8 +2,9 @@
 some common things to prime a new suse server, you can upload wherever, even in the same machine
 
 #bashrc
+```
 wget "https://raw.githubusercontent.com/dublinbranch/serverConfig/master/bashrc" -O -> ~/.bashrc
-
+```
 #set proper git usage and first repo
 zypper in git
 git config --global --edit
