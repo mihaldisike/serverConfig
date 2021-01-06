@@ -31,7 +31,7 @@ index 4a0556e..c764f3c 100644
  #Compression delayed
 -#ClientAliveInterval 0
 -#ClientAliveCountMax 3
-+#reasonable eternal amount of time (1 year), more and is clearly useless
++#reasonable almost "eternal" amount of time ( 1 day => 86400 seconds ), more and is clearly useless
 +ClientAliveInterval 120
 +ClientAliveCountMax 720
  #UseDNS no
