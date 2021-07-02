@@ -1,10 +1,10 @@
 
 #lower number = higher in the list
 #flag G to ignore gpg check (else you will need manual action)
-zypper -n addrepo --gpgcheck -p 90 http://download.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.2/devel:languages:php.repo
+zypper -n addrepo --gpgcheck -p 90 http://download.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.3/devel:languages:php.repo
 
 #more recent version and other stuff
-#zypper -n addrepo --gpgcheck -p 90 https://download.opensuse.org/repositories/server:http/openSUSE_Leap_15.1/server:http.repo
+#zypper -n addrepo --gpgcheck -p 90 https://download.opensuse.org/repositories/server:http/openSUSE_Leap_15.3/server:http.repo
 
 zypper -n --gpg-auto-import-keys refresh
 zypper -n install php7 php7-devel php7-fpm composer php7-opcache php7-mbstring php7-fileinfo php7-curl php7-mysql php7-soap php7-shmop php7-tidy php7-intl php7-gd php7-gettext php7-gmp
