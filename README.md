@@ -3,9 +3,13 @@ some common things to prime a new suse server, you can upload wherever, even in 
 
 # NO SWAP, this is a server, this is 2021 just buy more RAM
 to check if is active something
- swapon
+ ```
+swapon
+ ```
 to disable all
- swapoff -a
+ ```
+swapoff -a
+ ```
 
 # bashrc
 ```
