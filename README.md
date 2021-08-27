@@ -13,6 +13,21 @@ firewall-cmd --zone=public --permanent --add-service=https
 firewall-cmd --reload
 ```
 
+
+# set proper git usage and first repo
+```
+zypper in git
+git config --global --edit
+cd /etc
+touch .gitignore
+echo echo "ld.so.cache" >> .gitignore
+git init
+git add *
+git commit -a -m"init"
+#create repo to push
+```
+
+
 # SSH KEY! and disable password login 
 
 ```
@@ -46,17 +61,6 @@ swapoff -a
 ```
 wget "https://raw.githubusercontent.com/dublinbranch/serverConfig/master/bashrc" -O -> ~/.bashrc
 ```
-# set proper git usage and first repo
-```
-zypper in git
-git config --global --edit
-cd /etc
-git init
-git add *
-git commit -a -m"init"
-#create repo to push
-```
-
 
 
 # journald persistent
