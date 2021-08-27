@@ -21,7 +21,10 @@ ssh-keygen
 ### On your machine
 ### cat ~/.ssh/id_rsa.pub 
 
-vi /root/.ssh/authorized_keys2
+vi /root/.ssh/authorized_keys
+
+### DO NOT DISCONNECT! Open another session and check if asking for the password or not
+
 wget "https://raw.githubusercontent.com/dublinbranch/serverConfig/master/sshd.patch" -O -> /tmp/sshd.patch
 cd /etc 
 git apply /tmp/sshd.patch
