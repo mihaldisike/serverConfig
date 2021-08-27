@@ -1,38 +1,37 @@
 diff --git a/ssh/sshd_config b/ssh/sshd_config
-index 4a0556e..c764f3c 100644
+index 173923d..8d838ae 100644
 --- a/ssh/sshd_config
 +++ b/ssh/sshd_config
 @@ -10,7 +10,7 @@
  # possible, but leave them commented.  Uncommented options override the
  # default value.
- 
+
 -#Port 22
 +Port 1022
  #AddressFamily any
  #ListenAddress 0.0.0.0
  #ListenAddress ::
-@@ -75,11 +75,11 @@ PermitRootLogin yes
+@@ -54,11 +54,11 @@ AuthorizedKeysFile  .ssh/authorized_keys
  #IgnoreRhosts yes
- 
+
  # To disable tunneled clear text passwords, change to no here!
--PasswordAuthentication yes
+-#PasswordAuthentication yes
 +PasswordAuthentication no
  #PermitEmptyPasswords no
- 
+
  # Change to no to disable s/key passwords
 -#ChallengeResponseAuthentication yes
 +ChallengeResponseAuthentication no
- 
+
  # Kerberos options
  #KerberosAuthentication no
-@@ -118,8 +118,9 @@ X11Forwarding yes
- #UsePrivilegeSeparation sandbox
+@@ -95,8 +95,8 @@ X11Forwarding yes
+ #TCPKeepAlive yes
  #PermitUserEnvironment no
  #Compression delayed
 -#ClientAliveInterval 0
 -#ClientAliveCountMax 3
-+#reasonable almost "eternal" amount of time ( 1 day => 86400 seconds ), more and is clearly useless
-+ClientAliveInterval 120
++ClientAliveInterval 120 
 +ClientAliveCountMax 720
  #UseDNS no
  #PidFile /run/sshd.pid
