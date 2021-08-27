@@ -1,6 +1,34 @@
 # serverConfig
 some common things to prime a new suse server, you can upload wherever, even in the same machine
 
+
+# firewall and change ssh port
+```
+zypper in firewalld
+rcfirewalld start
+chkconfig firewalld on
+firewall-cmd --zone=public --permanent --add-port=1022/tcp
+firewall-cmd --zone=public --permanent --add-service=http
+firewall-cmd --zone=public --permanent --add-service=https
+firewall-cmd --reload
+```
+
+# SSH KEY! and disable password login 
+
+```
+ssh-keygen
+
+### On your machine
+### cat ~/.ssh/id_rsa.pub 
+
+vi /root/.ssh/authorized_keys2
+wget "https://raw.githubusercontent.com/dublinbranch/serverConfig/master/sshd.patch" -O -> /tmp/sshd.patch
+cd /etc 
+git apply /tmp/sshd.patch
+rcsshd restart 
+and reconnect using port 1022
+```
+
 # NO SWAP, this is a server, this is 2021 just buy more RAM
 to check if is active something
  ```
@@ -16,6 +44,7 @@ swapoff -a
 wget "https://raw.githubusercontent.com/dublinbranch/serverConfig/master/bashrc" -O -> ~/.bashrc
 ```
 # set proper git usage and first repo
+```
 zypper in git
 git config --global --edit
 cd /etc
@@ -23,16 +52,9 @@ git init
 git add *
 git commit -a -m"init"
 #create repo to push
+```
 
 
-# firewall
-zypper in firewalld
-rcfirewalld start
-chkconfig firewalld on
-firewall-cmd --zone=public --permanent --add-port=1022/tcp
-firewall-cmd --zone=public --permanent --add-service=http
-firewall-cmd --zone=public --permanent --add-service=https
-firewall-cmd --reload
 
 # journald persistent
 ```
@@ -42,13 +64,6 @@ echo "SystemMaxUse=10G" >> /etc/systemd/journald.conf
 echo "Storage=persistent" >> /etc/systemd/journald.conf
 systemctl restart systemd-journald.service
 ```
-
-# sshd
-wget "https://raw.githubusercontent.com/dublinbranch/serverConfig/master/sshd.patch" -O -> /tmp/sshd.patch
-cd /etc 
-git apply /tmp/sshd.patch
-rcsshd restart 
-and reconnect using port 1022
 
 # common tooling
 wget "https://raw.githubusercontent.com/dublinbranch/serverConfig/master/installme.sh" -O -> /tmp/installme.sh
@@ -83,11 +98,6 @@ mkdir /home/ivano.mercuri
 chown ivano.mercuri:users /home/ivano.mercuri
 usermod -g nginx ivano.mercuri
 su ivano.mercuri
-
-ssh-keygen
-
-# save where needed
-cat ~/.ssh/id_rsa.pub 
 
 # FINAL NOTES
 in case of failed patch use 
