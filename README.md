@@ -73,23 +73,27 @@ systemctl restart systemd-journald.service
 ```
 
 # common tooling
+```
 wget "https://raw.githubusercontent.com/dublinbranch/serverConfig/master/installme.sh" -O -> /tmp/installme.sh
 chmod +x /tmp/installme.sh
 /tmp/installme.sh
+```
 
 # mariadb 10.4 / 10.5 
+```
 wget "https://seisho.us/serverConfig/mariadb14.sh" -O -> /tmp/mariadb.sh
 wget "https://raw.githubusercontent.com/dublinbranch/serverConfig/master/mariadb15.sh" -O -> /tmp/mariadb.sh
 chmod +x /tmp/mariadb.sh
 /tmp/mariadb.sh
 #now create the first user if needed
-
+```
 # ephemeral port exaustion (TCP Port Lingering)
+```
 echo 1 > /proc/sys/net/ipv4/tcp_tw_reuse
-
+```
 # php 7.4 (check if you have php installed, if so remove completely, script tested only for fresh install)
 #this script will apply a patch so commit git!
-
+```
 cd /etc/
 git commit -m"setup in progress"
 git add *
@@ -98,14 +102,16 @@ git add *
 wget "https://raw.githubusercontent.com/dublinbranch/serverConfig/master/php74.sh" -O -> /tmp/php74.sh
 chmod +x /tmp/php74.sh
 /tmp/php74.sh
+```
 
 # create another user
+```
 useradd ivano.mercuri
 mkdir /home/ivano.mercuri
 chown ivano.mercuri:users /home/ivano.mercuri
 usermod -g nginx ivano.mercuri
 su ivano.mercuri
-
+```
 # FINAL NOTES
 in case of failed patch use 
 patch -p1 < /tmp/phpfpm.patch 
