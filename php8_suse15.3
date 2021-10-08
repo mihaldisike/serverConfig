@@ -13,6 +13,9 @@ zypper -n in nginx
 printf "\n" | pecl install apcu
 echo "extension = apcu.so" > /etc/php8/conf.d/apcu.ini
 
+pecl install igbinary
+echo "extension=igbinary.so" > /etc/php8/conf.d/igbinary.ini
+
 cd /etc/php8/fpm
 cp php-fpm.conf.default php-fpm.conf
 cd php-fpm.d/
