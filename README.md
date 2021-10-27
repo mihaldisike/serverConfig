@@ -17,6 +17,7 @@ firewall-cmd --reload
 # set proper git usage and first repo
 ```
 zypper in git
+git config --global ubmodule.fetchJobs 10
 git config --global --edit
 cd /etc
 touch .gitignore
