@@ -38,7 +38,7 @@ systemctl daemon-reload
 #pecl install redis
 #echo "extension = apcu.so" > /etc/php7/conf.d/apcu.ini
 #pecl install igbinary
-#echo "extension = apcu.so" > /etc/php7/conf.d/apcu.ini
+#echo "extension = igbinary.so" > /etc/php7/conf.d/igbinary.ini
 
 #of course install only in local machine!
 #pecl install xdebug
