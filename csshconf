@@ -1,0 +1,4 @@
+#https://cspeterson.net/using-csshxterm-high-dpi-display/
+terminal_bg_style=white
+terminal_reserve_top=10
+terminal_size=240x60
