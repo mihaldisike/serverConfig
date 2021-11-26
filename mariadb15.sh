@@ -6,9 +6,11 @@ zypper rm mariadb mariadb-client
 #in case version changes ecc ecc just zypper search -s mariadb to get the latest
 zypper in MariaDB-server MariaDB-rocksdb-engine MariaDB-oqgraph-engine MariaDB-columnstore-engine MariaDB-connect-engine
 
-zypper -n in MariaDB-backup mariadb-tools
+zypper -n in MariaDB-backup 
+#this is used to load the timezone info (mysql_tz_info)
+zypper -n in mariadb-tools
 
-#bing and where to find
+#binlog and where to find
 mkdir /srv/binlog/binlog -p
 chown mysql /srv/binlog
 
