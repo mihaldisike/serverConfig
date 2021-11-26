@@ -40,6 +40,10 @@ chkconfig mariadb on
 #in case you are doing an update also execute
 # mysql_upgrade 
 
+# in case ia a fresh install do 
+# mysql_install_db 
+# and change the privileges afterwards of the created stuff
+
 #verificare sia usato jemalloc tramite 
 #lsof -p $(pidof mysqld) | grep "jemalloc"
 #SHOW VARIABLES LIKE 'version_malloc_library';
