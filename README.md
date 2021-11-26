@@ -14,21 +14,6 @@ firewall-cmd --reload
 ```
 
 
-# set proper git usage and first repo
-```
-zypper in git
-git config --global ubmodule.fetchJobs 10
-git config --global --edit
-cd /etc
-touch .gitignore
-echo echo "ld.so.cache" >> .gitignore
-git init
-git add *
-git commit -a -m"init"
-#create repo to push
-```
-
-
 # SSH KEY! and disable password login 
 
 ```
@@ -47,6 +32,23 @@ git apply /tmp/sshd.patch
 rcsshd restart 
 and reconnect using port 1022
 ```
+
+
+# set proper git usage and first repo
+```
+zypper in git
+git config --global ubmodule.fetchJobs 10
+git config --global --edit
+cd /etc
+touch .gitignore
+echo echo "ld.so.cache" >> .gitignore
+git init
+git add *
+git commit -a -m"init"
+#create repo to push
+```
+
+
 
 # NO SWAP, this is a server, this is 2021 just buy more RAM
 to check if is active something
