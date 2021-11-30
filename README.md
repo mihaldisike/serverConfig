@@ -121,4 +121,4 @@ patch -p1 < /tmp/phpfpm.patch
 to see why is failing, maybe some update somewhere broke something...
 
 # Munin
-Please check the internal wiki as is complex and interleaved a bit
+Please check the internal wiki (Munin-node) as is complex and interleaved a bit
