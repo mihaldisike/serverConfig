@@ -54,14 +54,6 @@ wget "https://raw.githubusercontent.com/dublinbranch/serverConfig/master/phpfpm_
 cd /etc/
 git apply /tmp/phpfpm.patch
 
-#just  a few defaults
-wget "https://raw.githubusercontent.com/dublinbranch/serverConfig/master/nginx.sh" -O -> /tmp/nginx.sh
-chmod +x /tmp/nginx.sh
-/tmp/nginx.sh
-
-#srly ? how do they think is going to work whitout that ?
-printf '\nfastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;' >> /etc/nginx/fastcgi_params
-
 nginx -t
 rcnginx start
 
