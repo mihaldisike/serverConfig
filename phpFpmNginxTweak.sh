@@ -25,3 +25,8 @@ In nginx
         proxy_read_timeout 300;
         proxy_connect_timeout 300;
         proxy_send_timeout 300;
+        #in case of big pages or big csv to send around, or many get value
+        proxy_buffer_size          4M;
+        proxy_buffers              4 4M;
+        proxy_busy_buffers_size    4M;
+
