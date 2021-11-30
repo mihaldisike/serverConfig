@@ -7,3 +7,13 @@ printf '\nfastcgi_param  PHP_VALUE   "auto_prepend_file=/srv/www/phpCommon/error
 
 printf '\n#srly ? how do they think is going to work whitout that ?' >> /etc/nginx/fastcgi_params
 printf '\nfastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;' >> /etc/nginx/fastcgi_params
+
+#just  a few defaults
+wget "https://raw.githubusercontent.com/dublinbranch/serverConfig/master/nginx.sh" -O -> /tmp/nginx.sh
+chmod +x /tmp/nginx.sh
+/tmp/nginx.sh
+
+cd /etc
+
+git add *
+git commit -am"php done"
