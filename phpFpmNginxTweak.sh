@@ -22,6 +22,6 @@ git commit -am"php done"
 
 Certain php pool are ok to run for an extended period of time like the one for adminer
 In nginx 
-                   proxy_read_timeout 300;
-                   proxy_connect_timeout 300;
-                   proxy_send_timeout 300;
+        proxy_read_timeout 300;
+        proxy_connect_timeout 300;
+        proxy_send_timeout 300;
