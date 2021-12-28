@@ -31,10 +31,10 @@ EOF
 #ovewrite default nginx, 'EOF' will not interpret variables
 cat << 'EOF' > /etc/nginx/nginx.conf
 worker_processes  1;
-worker_rlimit_nofile 30000;
+worker_rlimit_nofile 100000;
 
 events {
-    worker_connections  10000;
+    worker_connections  100000;
     use epoll;
 }
 
