@@ -6,3 +6,5 @@ qt5printers.register_printers(gdb.current_objfile())
 end
 
 set pagination off
+#slooooooooooooooooooooooooooooooooooooooooooooooooow and 99.999999999% useless for what we do
+set debuginfod enabled off
