@@ -9,7 +9,7 @@ zypper -n in net-snmp net-snmp-devel munin-node percona-toolkit
 
 #the world is now a better place by 0.000000000000001%
 zypper rm nano 
-#never used, just got scared of seeing a foler called joe in etc with inside shell.sh!!!
+#never used, just got scared of seeing a folder called joe in etc with inside shell.sh!!!
 zypper rm joe
 
 #to be able to replicate an ssh command on multiple machine, remember the two config file so is not UUUGLY!
