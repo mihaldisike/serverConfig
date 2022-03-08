@@ -10,6 +10,8 @@ zypper -n install php8 php8-devel php8-fpm composer php8-opcache php8-mbstring p
 # load_module lib64/nginx/modules/ngx_http_fancyindex_module.so;
 zypper -n in nginx
 
+#pecl is retarded -.- in case you update the PHP version it will not update the package, and will even not update them if asked to do so! you must remove them by hand -.-
+#pecl uninstall  apcu
 printf "\n" | pecl install apcu
 echo "extension = apcu.so" > /etc/php8/conf.d/apcu.ini
 
