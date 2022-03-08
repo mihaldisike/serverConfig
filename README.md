@@ -33,7 +33,35 @@ rcsshd restart
 and reconnect using port 1022
 ```
 
+# SSH client only
+```
+We still have a good number of older machine who still use older now deprecated ssh encription scheme
 
+https://confluence.atlassian.com/bitbucketserverkb/ssh-rsa-key-rejected-with-message-no-mutual-signature-algorithm-1026057701.html
+
+Add this in /etc/ssh/ssh_config
+
+PubkeyAcceptedKeyTypes +ssh-rsa
+
+Also add to connect on the non standard port the 
+
+host techadsmedia.com
+        Port 1022
+host s14.techadsmedia.com
+        Port 1022
+host s16.techadsmedia.com
+        Port 1022
+host s20.techadsmedia.com
+        Port 1022
+host s18
+        Port 1022
+host s22.techadsmedia.com
+        Port 1022
+
+
+
+
+```
 # set proper git usage and first repo
 ```
 zypper in git
