@@ -6,6 +6,10 @@ zypper -n --gpg-auto-import-keys refresh
 
 zypper -n install php8 php8-devel php8-fpm composer php8-opcache php8-mbstring php8-fileinfo php8-curl php8-mysql php8-soap php8-shmop php8-tidy php8-intl php8-gd php8-gettext php8-gmp
 
+# for local development
+# pecl install xdebug
+# echo "zend_extension=/usr/lib64/php8/extensions/xdebug.so" > /etc/php8/conf.d/xdebug.ini
+
 #in some case this is quite usefull to enable the (just at the beginning)
 # load_module lib64/nginx/modules/ngx_http_fancyindex_module.so;
 zypper -n in nginx
