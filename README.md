@@ -57,7 +57,9 @@ host s18
         Port 1022
 host s22.techadsmedia.com
         Port 1022
+Finally the keep alive 
 
+ServerAliveInterval 60
 
 
 
