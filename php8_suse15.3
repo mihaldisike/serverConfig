@@ -3,12 +3,14 @@
 #flag G to ignore gpg check (else you will need manual action)
 zypper -n ar --gpgcheck https://download.opensuse.org/repositories/devel:/languages:/php/openSUSE_Leap_15.3/devel:languages:php.repo
 zypper -n --gpg-auto-import-keys refresh
+#(cla) this block is not necessary on tumbleweed
 
 zypper -n install php8 php8-devel php8-fpm composer php8-opcache php8-mbstring php8-fileinfo php8-curl php8-mysql php8-soap php8-shmop php8-tidy php8-intl php8-gd php8-gettext php8-gmp
 
 # for local development
 # pecl install xdebug
 # echo "zend_extension=/usr/lib64/php8/extensions/xdebug.so" > /etc/php8/conf.d/xdebug.ini
+#(cla) debug for php so necessary
 
 #in some case this is quite usefull to enable the (just at the beginning)
 # load_module lib64/nginx/modules/ngx_http_fancyindex_module.so;
