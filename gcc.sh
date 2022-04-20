@@ -9,6 +9,6 @@ ln -s /usr/bin/ld.gold /etc/alternatives/ld
 
 #mold instead, faster but still some minor annoyances with valgrind or slow debug in some cases use at your own risk
 
-zypper in libcurl-devel jemalloc-devel libzip-devel libmaxminddb-devel libdw-devel libmariadb-devel
+zypper in libcurl-devel jemalloc-devel libzip-devel libmaxminddb-devel libdw-devel libmariadb-devel boost-devel libxml++-devel
 
 #boost version be sure to have at least the 71
