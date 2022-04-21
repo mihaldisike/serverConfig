@@ -9,7 +9,7 @@ ln -s /usr/bin/ld.gold /etc/alternatives/ld
 
 #mold instead, faster but still some minor annoyances with valgrind in some cases use at your own risk
 #remember to change the .pro to use it (normally put in the mkSpec.pri
-# QMAKE_LFLAGS += -B /home/roy/Public/mold/
+# QMAKE_LFLAGS += -B /usr/bin/mold
 zypper in mold
 
 zypper in libcurl-devel jemalloc-devel libzip-devel libmaxminddb-devel libdw-devel libmariadb-devel boost-devel libxml++-devel
