@@ -71,10 +71,10 @@ git config --global ubmodule.fetchJobs 10
 git config --global --edit
 cd /etc
 touch .gitignore
-echo echo "ld.so.cache" >> .gitignore
-echo echo "udev/*" >> .gitignore
-echo echo "udev/*" >> .gitignore
-echo echo "ssh/moduli" >> .gitignore
+echo "ld.so.cache" >> .gitignore
+echo "udev/*" >> .gitignore
+echo "udev/*" >> .gitignore
+echo "ssh/moduli" >> .gitignore
 
 
 git init
