@@ -131,10 +131,10 @@ chmod +x /tmp/mariadb.sh
 /tmp/mariadb.sh
 ```
 
-#now create the first user if needed
+### now create the first user if needed https://s22.trott.pw/dev_wiki/index.php?title=MySQL_Create_User
 
 
-```
+
 # ephemeral port exaustion (TCP Port Lingering)
 ```
 echo 1 > /proc/sys/net/ipv4/tcp_tw_reuse
