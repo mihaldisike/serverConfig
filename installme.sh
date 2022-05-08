@@ -3,6 +3,9 @@
 zypper -n in sshfs moreutils strace vnstat sysstat iotop htop boost-devel
 zypper -n in autossh tree tcpdump curlftpfs netcat gnu_parallel
 
+# skip suggested as will install half gnome enviroment for some reason
+zypper in --no-recommends  perf
+
 
 #only for server
 zypper -n in net-snmp net-snmp-devel munin-node percona-toolkit
