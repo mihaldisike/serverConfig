@@ -29,6 +29,7 @@ EOF
 
 
 #ovewrite default nginx, 'EOF' will not interpret variables
+#very important as those will allow many many concurrent connection !
 cat << 'EOF' > /etc/nginx/nginx.conf
 worker_processes  1;
 worker_rlimit_nofile 100000;
