@@ -133,7 +133,8 @@ chmod +x /tmp/mariadb.sh
 
 ### now create the first user if needed https://s22.trott.pw/dev_wiki/index.php?title=MySQL_Create_User
 
-
+# NGINX
+Remember for a server to increase the worker and max open file (check the file for info)
 
 # ephemeral port exaustion (TCP Port Lingering)
 ```
