@@ -12,6 +12,9 @@ firewall-cmd --zone=public --permanent --add-service=http
 firewall-cmd --zone=public --permanent --add-service=https
 firewall-cmd --reload
 ```
+New version will use 
+`nft list ruleset`
+To check if is working istead of iptables
 
 
 # SSH KEY! and disable password login 
