@@ -171,3 +171,6 @@ to see why is failing, maybe some update somewhere broke something...
 
 # Munin
 Please check the internal wiki (Munin-node) as is complex and interleaved a bit
+
+# For desktop
+balooctl --disable
