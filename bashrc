@@ -16,3 +16,7 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 for file in /etc/bash_completion.d/*.sh ; do
     source "$file"
 done
+
+#up autocomplete Suse like 
+#bind '"\e[A": history-search-backward'
+#bind '"\e[B": history-search-forward'
