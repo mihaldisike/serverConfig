@@ -1,0 +1,8 @@
+Package which are useless
+#20 year I do not use a modem!
+zypper -n rm ModemManager
+#lot of clutter for mysql-workbench
+zypper addlock proj-data-at proj-data-au proj-data-ca proj-data-ch proj-data-de proj-data-dk proj-data-fr proj-data-is proj-data-no proj-data-nz proj-data-se proj-data-sk proj-data-uk proj-data-us
+
+#unused editor
+zypper -n rm nano joe 
