@@ -5,8 +5,8 @@ zypper -n rm ModemManager
 zypper -n addlock proj-data-at proj-data-au proj-data-ca proj-data-ch proj-data-de proj-data-dk proj-data-fr proj-data-is proj-data-no proj-data-nz proj-data-se proj-data-sk proj-data-uk proj-data-us
 
 #not really ever used, sorry
-zypper -n rm patterns-kde-kde_games kmahjongg kmines kpat kreversi ksudoku patterns-games-games kmail 
-zypper -n addlock patterns-kde-kde_games patterns-games-games patterns-kde-kde_office kmail 
+zypper -n rm patterns-kde-kde_games kmahjongg kmines kpat kreversi ksudoku patterns-games-games kmail kdegames-carddecks
+zypper -n addlock patterns-kde-kde_games patterns-games-games patterns-kde-kde_office kmail kdegames-carddecks
 
 #unused editor
 zypper -n rm nano joe 
