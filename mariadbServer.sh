@@ -1,5 +1,5 @@
 rpm --import https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
-zypper -n addrepo --gpgcheck --refresh https://yum.mariadb.org/10.5/opensuse/15/x86_64 mariadb
+#zypper -n addrepo --gpgcheck --refresh https://yum.mariadb.org/10.5/opensuse/15/x86_64 mariadb
 zypper -n --gpg-auto-import-keys refresh
 #no silent install there is some output and the etc/my.cnf need to be changed
 zypper rm mariadb mariadb-client
@@ -35,7 +35,7 @@ echo "event_scheduler=ON"  >> /etc/my.cnf.d/server.cnf
 
 
 systemctl start mariadb
-chkconfig mariadb on
+systemctl enable mariadb
 
 #in case you are doing an update also execute
 # mysql_upgrade 
