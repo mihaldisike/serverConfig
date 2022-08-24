@@ -1,6 +1,6 @@
 #qt need to be installed by itself
 
-zypper in cmake git okteta clazy cmake binutils-gold mold
+zypper in cmake git okteta clazy cmake mold
 zypper in cpp gcc gcc-c++ gcc-c++
 
 #mold instead, faster but still some minor annoyances with valgrind in some cases use at your own risk
