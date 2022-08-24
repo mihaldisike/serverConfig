@@ -1,11 +1,7 @@
 #qt need to be installed by itself
 
 zypper in cmake git okteta clazy cmake binutils-gold mold
-zypper in cpp11 gcc gcc11 gcc11-c++ gcc-c++
-
-#In 99.99% is ok to use ld-gold instead of bfg, ATM I (Roy) the only problem is linking mariadb
-rm /etc/alternatives/ld
-ln -s /usr/bin/ld.gold /etc/alternatives/ld
+zypper in cpp gcc gcc-c++ gcc-c++
 
 #mold instead, faster but still some minor annoyances with valgrind in some cases use at your own risk
 #remember to change the .pro to use it (normally put in the mkSpec.pri
