@@ -2,7 +2,7 @@ zypper rm mariadb mariadb-client mariadb-server mariadb-tools
 
 systemctl start mariadb
 #autostart
-chkconfig mariadb on
+systemctl enable mariadb
 
 mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root mysql
 
