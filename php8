@@ -29,3 +29,9 @@ cp www.conf.default www.conf
 
 
 systemctl enable php-fpm.service
+
+#in some case this is quite usefull to enable the (just at the beginning)
+# load_module lib64/nginx/modules/ngx_http_fancyindex_module.so;
+zypper -n in nginx
+systemctl start php-fpm.service
+systemctl enable php-fpm.service
