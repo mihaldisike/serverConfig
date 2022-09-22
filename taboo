@@ -14,4 +14,4 @@ zypper -n rm nano joe
 
 #will remove libreoffice base, which is not require for normal usage
 zypper -n rm java-*
-zypper -r addlock java-*
+zypper -n addlock java-*
