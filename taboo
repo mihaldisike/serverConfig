@@ -15,3 +15,6 @@ zypper -n rm nano joe
 #will remove libreoffice base, which is not require for normal usage
 zypper -n rm java-*
 zypper -n addlock java-*
+
+#we update mysql by hand if needed to use new functionality, so if possible we keep the same
+zypper -n addlock mysql-*
