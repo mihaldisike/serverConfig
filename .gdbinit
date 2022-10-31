@@ -13,6 +13,3 @@ end
 set pagination off
 #slooooooooooooooooooooooooooooooooooooooooooooooooow and 99.999999999% useless for what we do
 set debuginfod enabled off
-#we do not really care about syste lib
-set sharedlibrary preload-libraries off
-set sharedlibrary load-dyld-symbols off
