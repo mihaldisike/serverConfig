@@ -16,6 +16,7 @@ zypper -n install php8 php8-bcmath php8-devel php8-fpm composer php8-opcache php
 
 #pecl is retarded -.- in case you update the PHP version it will not update the package, and will even not update them if asked to do so! you must remove them by hand -.-
 #pecl uninstall  apcu
+zypper -n install make findutils
 printf "\n" | pecl install apcu
 echo "extension = apcu.so" > /etc/php8/conf.d/apcu.ini
 
