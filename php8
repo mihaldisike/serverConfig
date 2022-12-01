@@ -5,7 +5,7 @@ zypper -n ar --gpgcheck https://download.opensuse.org/repositories/devel:/langua
 zypper -n --gpg-auto-import-keys refresh
 #(cla) this block is not necessary on tumbleweed
 
-zypper -n install php8 php8-bcmath php8-devel php8-fpm composer php8-opcache php8-mbstring php8-fileinfo php8-curl php8-mysql php8-soap php8-shmop php8-tidy php8-intl php8-gd php8-gettext php8-gmp
+zypper -n install php8 php8-bcmath php8-devel php8-dom php8-fpm composer php8-opcache php8-mbstring php8-fileinfo php8-curl php8-mysql php8-soap php8-shmop php8-tidy php8-intl php8-gd php8-gettext php8-gmp
 
 # for local development
 # pecl install xdebug
