@@ -18,3 +18,6 @@ zypper -n addlock java-*
 
 #we update mysql by hand if needed to use new functionality, so if possible we keep the same
 zypper -n addlock mysql-*
+
+#I do not plan in using stock wallpapers
+zypper -n addlock breeze5-wallpapers*
