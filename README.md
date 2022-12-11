@@ -69,7 +69,7 @@ ServerAliveInterval 60
 ```
 # set proper git usage and first repo
 ```
-zypper in git
+zypper in git vim
 git config --global ubmodule.fetchJobs 10
 git config --global --edit
 cd /etc
