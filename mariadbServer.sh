@@ -47,4 +47,5 @@ systemctl enable mariadb
 #verificare sia usato jemalloc tramite 
 #lsof -p $(pidof mysqld) | grep "jemalloc"
 #SHOW VARIABLES LIKE 'version_malloc_library';
+zypper in mariadb-tools
 echo "ricorda i timezone con mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root mysql -p"
