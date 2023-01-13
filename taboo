@@ -7,7 +7,7 @@ zypper -n addlock proj-data-at proj-data-au proj-data-ca proj-data-ch proj-data-
 
 #not really ever used, sorry
 zypper -n rm patterns-kde-kde_games kmahjongg kmines kpat kreversi ksudoku patterns-games-games kmail kdegames-carddecks
-zypper -n addlock patterns-kde-kde_games patterns-games-games patterns-kde-kde_office kmail kdegames-carddecks
+zypper -n addlock patterns-kde-kde_games patterns-games-games patterns-kde-kde_office kmail kdegames-carddecks kdegames-carddecks-default
 
 #unused editor
 zypper -n rm nano joe 
