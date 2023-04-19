@@ -1,5 +1,7 @@
 https://earthly.dev/blog/chroot/
 
+zypper in docker
+rcdocker start
 docker pull opensuse/tumbleweed
 cd /srv/docker
 mkdir suse1 && cd suse1
