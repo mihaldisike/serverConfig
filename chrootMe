@@ -1,0 +1,28 @@
+https://earthly.dev/blog/chroot/
+
+docker pull opensuse/tumbleweed
+cd /srv/docker
+mkdir suse1 && cd suse1
+docker export $(docker create opensuse/tumbleweed) -o tumbleweed.tar.gz
+tar -xvf tumbleweed.tar.gz 
+
+mount -t proc /proc /srv/docker/suse1/proc/
+mount --rbind /sys /srv/docker/suse1/sys/
+mount --rbind /dev /srv/docker/suse1/dev/
+
+
+echo "nameserver 8.8.8.8" > etc/resolv.conf
+echo "127.0.0.1       localhost" > /etc/hosts
+
+screen -dRR suse1
+chroot .
+
+
+    to bind mount to access external folder
+
+ mount --bind /srv/www /srv/docker/suse1/srv/www
+
+    Php will use the path defined in nginx! so map the EXTERNAL inside, not the opposite
+
+mount --bind /home/roy/www/ /home/roy/suse/stable/home/roy/www/
+
