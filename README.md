@@ -5,8 +5,8 @@ some common things to prime a new suse server, you can upload wherever, even in 
 # firewall and change ssh port
 ```
 zypper in firewalld
-rcfirewalld start
-chkconfig firewalld on
+systemctl start firewalld
+chkconfig firewalld on (Tumbleweed systemctl enable --now firewalld)
 firewall-cmd --zone=public --permanent --add-port=1022/tcp
 firewall-cmd --zone=public --permanent --add-service=http
 firewall-cmd --zone=public --permanent --add-service=https
